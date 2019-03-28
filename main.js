@@ -18,6 +18,10 @@ function search(event) {
     // Stop page from reloading on button click.
     event.preventDefault();
 
+
+    
+     // Update our html.
+     updateUL();
 }
 
 function displayAll(event) {
@@ -50,9 +54,25 @@ function clearUL() {
 }
 
 // Append to the UL.
-function addToUL(numberToAppend) {
+function addToUL(country) {
     const ul = document.querySelector('#list');
-    const newLI = document.createElement('li');
-    newLI.innerText = numberToAppend;
-    ul.appendChild(newLI);
+    const nationLI = document.createElement('li');
+    const capitalLI = document.createElement('li');
+    const statesLI = document.createElement('li');
+    const populationLI = document.createElement('li');
+    const attractLI = document.createElement('li');
+     
+    nationLI.innerText = country.nation;
+    capitalLI.innerText = country.capital;
+    statesLI.innerText = country.states;
+    populationLI.innerText = country.population;
+    attractLI.innerText = country.attraction;
+
+
+    ul.appendChild(nationLI);
+    ul.appendChild(capitalLI);
+    ul.appendChild(statesLI);
+    ul.appendChild(populationLI);
+    ul.appendChild(attractLI);
+
 }
