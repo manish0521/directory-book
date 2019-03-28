@@ -20,8 +20,7 @@ function search(event) {
 
 
     
-     // Update our html.
-     updateUL();
+
 }
 
 function displayAll(event) {
@@ -30,28 +29,11 @@ function displayAll(event) {
  
      // Add value to everything on the list.
      for(let i = 0; i < countries.length; i++) {
-         console.log(countries[i]);
-     }
- 
-     // Update our html.
-     updateUL();
-
-}
-
-
-function updateUL() {
-    clearUL();
-    for (let i = 0; i < countries.length; i++) {
         addToUL(countries[i]);
-    }
+     }
+
 }
 
-function clearUL() {
-    const ul = document.querySelector('#list');
-    while (ul.hasChildNodes()) {
-        ul.removeChild(ul.firstChild);
-    }
-}
 
 // Append to the UL.
 function addToUL(country) {
@@ -68,7 +50,7 @@ function addToUL(country) {
     populationLI.innerText = country.population;
     attractLI.innerText = country.attraction;
 
-
+    
     ul.appendChild(nationLI);
     ul.appendChild(capitalLI);
     ul.appendChild(statesLI);
